@@ -60,8 +60,8 @@ class TicTacToe
       index = input_to_index(input)
       isValid = valid_move?(index)
       if isValid
-        move(index, current_player
-        display_board
+        move(index, current_player())
+        display_board()
       end
     end
     return board
@@ -78,7 +78,7 @@ class TicTacToe
   end
 
   def current_player
-    counter = turn_count
+    counter = turn_count()
     if counter % 2 == 0
       return "X"
     else
@@ -87,7 +87,7 @@ class TicTacToe
   end
 
   def won?
-    if !@board.empty?
+    if !@board.empty?()
       WIN_COMBINATIONS.each do |combination|
         position_1 = @board[combination[0]]
         position_2 = @board[combination[1]]
@@ -112,8 +112,8 @@ class TicTacToe
   end
 
   def draw?
-    if full? == true
-      if won? == false
+    if full?() == true
+      if won?() == false
         return true
       end
     end
@@ -121,7 +121,7 @@ class TicTacToe
   end
 
   def over?
-    if full? || won? || draw?
+    if full?() || won?() || draw?()
       true
     else
       false
@@ -129,8 +129,8 @@ class TicTacToe
   end
 
   def winner
-    isWin = won?
-    if isWin != false
+    isWin = won?()
+    if isWin() != false
       return @board[isWin[0]]
     end
   end
