@@ -61,7 +61,7 @@ class TicTacToe
       isValid = valid_move?(index)
       if isValid
         move(index, current_player
-        display_board()
+        display_board
       end
     end
     return board
