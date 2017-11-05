@@ -52,7 +52,7 @@ class TicTacToe
     false
   end
 
-  def turn()
+  def turn
     isValid = false
     while isValid == false
       puts "Please enter 1-9:"
@@ -60,14 +60,14 @@ class TicTacToe
       index = input_to_index(input)
       isValid = valid_move?(index)
       if isValid
-        move(index, current_player())
+        move(index, current_player
         display_board()
       end
     end
     return board
   end
 
-  def turn_count()
+  def turn_count
     counter = 0
     @board.each do |element|
       if element == "X" || element == "O"
@@ -77,8 +77,8 @@ class TicTacToe
     return counter
   end
 
-  def current_player()
-    counter = turn_count(@board)
+  def current_player
+    counter = turn_count
     if counter % 2 == 0
       return "X"
     else
@@ -86,7 +86,7 @@ class TicTacToe
     end
   end
 
-  def won?()
+  def won?
     if !@board.empty?
       WIN_COMBINATIONS.each do |combination|
         position_1 = @board[combination[0]]
@@ -102,7 +102,7 @@ class TicTacToe
     false
   end
 
-  def full?()
+  def full?
     @board.each do |element|
       if element == " " || element == ""
         return false
@@ -111,25 +111,25 @@ class TicTacToe
     true
   end
 
-  def draw?(board)
-    if full?(@board) == true
-      if won?(@board) == false
+  def draw?
+    if full? == true
+      if won? == false
         return true
       end
     end
     false
   end
 
-  def over?()
-    if full?(@board) || won?(@board) || draw?(@board)
+  def over?
+    if full? || won? || draw?
       true
     else
       false
     end
   end
 
-  def winner()
-    isWin = won?(@board)
+  def winner
+    isWin = won?
     if isWin != false
       return @board[isWin[0]]
     end
