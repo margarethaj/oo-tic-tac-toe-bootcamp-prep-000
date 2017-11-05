@@ -130,7 +130,7 @@ class TicTacToe
 
   def winner
     isWin = won?()
-    if isWin() != false
+    if isWin != false
       return @board[isWin[0]]
     end
   end
