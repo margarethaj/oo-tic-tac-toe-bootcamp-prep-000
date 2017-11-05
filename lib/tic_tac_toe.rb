@@ -64,7 +64,7 @@ class TicTacToe
         display_board()
       end
     end
-    return board
+    return @board
   end
 
   def turn_count
