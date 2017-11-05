@@ -134,4 +134,9 @@ class TicTacToe
       return @board[isWin[0]]
     end
   end
+
+  def play
+
+  end
+
 end
