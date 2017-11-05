@@ -136,7 +136,15 @@ class TicTacToe
   end
 
   def play
-
+    until over?()
+      turn()
+    end
+    if winner().nil? == false
+      puts "Congratulations #{winner()}!"
+    else
+      puts "Cat\'s Game!"
+    end
+    return @board
   end
 
 end
